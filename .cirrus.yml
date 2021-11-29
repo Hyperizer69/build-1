@@ -43,7 +43,7 @@ task:
       - repo init -q --no-repo-verify --depth=1 -u https://github.com/NusantaraProject-ROM/android_manifest -b 11 -g default,-device,-mips,-darwin,-notdefault
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
       # DT/VT/KT
-      - git clone --depth=1 https://github.com/I-n-o-k/device_xiaomi_juice -b anu device/xiaomi/juice
+      - git clone --depth=1 https://github.com/I-n-o-k/device_xiaomi_juice -b qti-bt device/xiaomi/juice
       - git clone --depth=1 https://gitlab.com/I-n-o-k/vendor-lime --single-branch -b 11 vendor/xiaomi/juice
       - git clone --depth=1 https://github.com/I-n-o-k/android_kernel_xiaomi_bengal --single-branch -b 11.0 kernel/xiaomi/juice
       # TOOLCHAIN
