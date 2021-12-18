@@ -44,13 +44,19 @@ task:
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
       # DT/VT/KT/TC
       - git clone --depth=1 https://github.com/I-n-o-k/device_xiaomi_juice -b qti-bt device/xiaomi/juice
-      - git clone --depth=1 https://gitlab.com/I-n-o-k/vendor-lime --single-branch -b 11ABT vendor/xiaomi/juice
+      - git clone --depth=1 https://gitlab.com/I-n-o-k/vendor-lime --single-branch -b 11 vendor/xiaomi/juice
       - git clone --depth=1 https://github.com/I-n-o-k/android_kernel_xiaomi_bengal --single-branch -b 11.0 kernel/xiaomi/juice
       # HALS
       - rm -rf hardware/qcom-caf/sm8250/audio
       - rm -rf hardware/qcom-caf/sm8250/display
       - rm -rf hardware/qcom-caf/sm8250/media
       - rm -rf external/json-c
+      - rm -rf vendor/qcom/opensource/commonsys-intf/bluetooth
+      - rm -rf vendor/qcom/opensource/commonsys/bluetooth_ext
+      - rm -rf vendor/qcom/opensource/interfaces
+      - git clone --depth=1 https://github.com/I-n-o-k/android_vendor_qcom_opensource_interfaces vendor/qcom/opensource/interfaces
+      - git clone --depth=1 https://github.com/I-n-o-k/android_vendor_qcom_opensource_bluetooth_ext vendor/qcom/opensource/commonsys/bluetooth_ext
+      - git clone --depth=1 https://github.com/I-n-o-k/android_vendor_qcom_opensource_bluetooth-commonsys-intf vendor/qcom/opensource/commonsys-intf/bluetooth
       - git clone --depth=1 https://github.com/I-n-o-k/hardware_qcom-caf_sm8250_audio hardware/qcom-caf/sm8250/audio
       - git clone --depth=1 https://github.com/I-n-o-k/hardware_qcom-caf_sm8250_display hardware/qcom-caf/sm8250/display
       - git clone --depth=1 https://github.com/I-n-o-k/hardware_qcom-caf_sm8250_media hardware/qcom-caf/sm8250/media
