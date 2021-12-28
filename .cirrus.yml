@@ -16,10 +16,10 @@ task:
        - export DEBIAN_FRONTEND=noninteractive
        - export ALLOW_MISSING_DEPENDENCIES=true
        - export SELINUX_IGNORE_NEVERALLOW=true
-       - export CC=clang
-       - export CLANG_TRIPLE=aarch64-linux-gnu-
-       - export CROSS_COMPILE=aarch64-linux-gnu-
-       - export CROSS_COMPILE_ARM32=arm-linux-gnueabi-
+       - export TZ=Asia/Jakarta
+       - export BUILD_USERNAME=mobxprjkt
+       - export BUILD_HOSTNAME=c3eru
+       - export WITH_GAPPS=false
        - apt update
        - apt install sudo
        - mkdir -p ~/.config/rclone
