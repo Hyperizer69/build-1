@@ -7,6 +7,9 @@ curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
+export BUILD_USERNAME=mobxprjkt
+export BUILD_HOSTNAME=c3eru
+export WITH_GAPPS=true
 ccache -M 20G
 ccache -o compression=true
 ccache -z
