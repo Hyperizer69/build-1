@@ -19,7 +19,7 @@ task:
        - export TZ=Asia/Jakarta
        - export BUILD_USERNAME=mobxprjkt
        - export BUILD_HOSTNAME=c3eru
-       - export WITH_GAPPS=false
+       - export WITH_GAPPS=true
        - apt update
        - apt install sudo
        - mkdir -p ~/.config/rclone
