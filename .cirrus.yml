@@ -64,8 +64,8 @@ task:
       - echo "============================"
       - echo "Starting the Build..."
       - echo "============================"
-      - ./collect.sh
-#      - ./final.sh
+#      - ./collect.sh
+      - ./final.sh
       - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Build $(cd /tmp/rom/out/target/product/juice/ && ls dotOS*.zip) Completed!"
       - echo "============================"
       - echo "Build Completed!"
@@ -76,7 +76,7 @@ task:
       - echo "Mengunggah Build...."
       - echo "============================"
       - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Uploading Build $(cd /tmp/rom/out/target/product/juice/ && ls dotOS*.zip)"
-#      - rclone copy /tmp/rom/out/target/product/juice/*.zip mobx:juice -P
+      - rclone copy /tmp/rom/out/target/product/juice/*.zip mobx:juice -P
       - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Build $(cd /tmp/rom/out/target/product/juice/ && ls *.zip) Uploaded Successfully!"
       - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Download link https://cloud.mobxs.workers.dev/juice/$(cd /tmp/rom/out/target/product/juice/ && ls dotOS*.zip)"
       - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Compres ccache"
