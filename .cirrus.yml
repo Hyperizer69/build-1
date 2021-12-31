@@ -48,8 +48,6 @@ task:
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
       # DT/VT/KT/TC
       - rm -rf platform/packages/modules
-      - git clone --depth=1 https://android.googlesource.com/device/google/cuttlefish -b master device/google/cuttlefish
-      
       - git clone --depth=1 https://github.com/c3eru/android_device_xiaomi_juice -b twelve-pe device/xiaomi/juice
       - git clone --depth=1 https://github.com/Joaquin-000/android_vendor_xiaomi_juice --single-branch -b twelve vendor/xiaomi/juice
       - git clone --depth=1 https://github.com/stormbreaker-project/kernel_poco_citrus --single-branch -b main kernel/xiaomi/juice
