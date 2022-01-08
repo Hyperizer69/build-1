@@ -2,7 +2,7 @@
 cd /tmp/rom
 
 . build/envsetup.sh
-lunch lineage_juice-userdebug
+lunch conquer_juice-userdebug
 curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="$(echo "${var_cache_report_config}")"
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
@@ -14,4 +14,4 @@ export BUILD_HOSTNAME=yoviie
 ccache -M 20G
 ccache -o compression=true
 ccache -z
-make bacon -j8
+make carthage -j8
