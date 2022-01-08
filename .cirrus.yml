@@ -34,7 +34,7 @@ task:
        - git config --global user.name "c3eru"
        - git config --global user.email "yyprjkt@gmail.com"
        - mkdir -p /tmp/ccache
-       - rclone copy mobx:lineage/ccache.tar.gz /tmp -P
+       - rclone copy mobx:LineageOS/ccache.tar.gz /tmp -P
        - cd /tmp
        - time tar xf ccache.tar.gz
        - cd /tmp
@@ -73,7 +73,7 @@ task:
       - echo "============================"
       - ./collect.sh
 #      - ./final.sh
-      - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Build $(cd /tmp/rom/out/target/product/juice/ && ls lineage*.zip) Selesai!"
+#      - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Build $(cd /tmp/rom/out/target/product/juice/ && ls lineage*.zip) Selesai!"
       
       - echo "============================"
       - echo "Build Completed!"
@@ -87,11 +87,11 @@ task:
       
 #      - rclone copy /tmp/rom/out/target/product/juice/*.zip mobx:juice -P
 
-      - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Build $(cd /tmp/rom/out/target/product/juice/ && ls *.zip) Berhasil Diunggah!"
+#      - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Build $(cd /tmp/rom/out/target/product/juice/ && ls *.zip) Berhasil Diunggah!"
       
-      - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Download link https://cloud.mobxs.workers.dev/juice/$(cd /tmp/rom/out/target/product/juice/ && ls lineage*.zip)"
+#      - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Download link https://cloud.mobxs.workers.dev/juice/$(cd /tmp/rom/out/target/product/juice/ && ls lineage*.zip)"
       
-      - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Compres ccache"
+#      - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Compres ccache"
 
       - ./ziping.sh
 
@@ -99,7 +99,7 @@ task:
 
       - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Uploading ccache...."
       
-      - rclone copy ccache.tar.gz mobx:lineage -P
+      - rclone copy ccache.tar.gz mobx:LineageOS -P
       - echo " "
       - echo "============================"
       - echo "Build Berhasil Diunggah!"
