@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sleep 5s
+sleep 1m
 
 cd /tmp
 
