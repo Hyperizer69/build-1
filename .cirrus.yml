@@ -27,8 +27,8 @@ task:
        - DEBIAN_FRONTEND=noninteractive
        - sudo apt install python3 -y
        - sudo ln -sf /usr/bin/python3 /usr/bin/python
-       - git config --global user.name "c3eru"
-       - git config --global user.email "yyprjkt@gmail.com"
+       - git config --global user.name "hyperizer69"
+       - git config --global user.email "hyperizer69@gmail.com"
        - mkdir -p /tmp/ccache
        - rclone copy mobx:PixelExperience_Plus/ccache.tar.gz /tmp -P
        - cd /tmp
