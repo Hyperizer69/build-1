@@ -46,13 +46,20 @@ task:
       - echo "============================"
       - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Mulai sinkronisasi Sumber..."
       - cd /tmp/rom
-      - repo init -q --no-repo-verify --depth=1 -u https://github.com/PixelExperience/manifest -b eleven-plus -g default,-device,-mips,-darwin,-notdefault
+      - repo init -q --no-repo-verify --depth=1 -u https://github.com/Fusion-OS/android_manifest -b twelve -g default,-device,-mips,-darwin,-notdefault
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
       # DT/VT/KT/TC
-      - git clone --depth=1 https://github.com/c3eru/device_trees -b eleven device/xiaomi/juice
-      - git clone --depth=1 https://github.com/c3eru/vendor_tree --single-branch -b 11.0 vendor/xiaomi/juice
-      - git clone --depth=1 https://github.com/c3eru/KERNEL_A11 -b 11.0 kernel/xiaomi/juice
-      - git clone --depth=1 https://github.com/kdrag0n/proton-clang -b master prebuilts/clang/host/linux-x86/clang-proton
+      - git clone --depth=1 https://github.com/Hyperizer69/device_realme_RMX1971 -b twelve device/realme/RMX1851
+      - git clone --depth=1 https://github.com/Hyperizer69/vendor_realme_RMX1851-1 --single-branch -b Lineage-8.1 vendor/realme/RMX1851
+      - git clone --depth=1 https://github.com/Hyperizer69/device_realme_sdm710-common-1 -b twelve device/realme/sdm710-common
+      - git clone --depth=1 https://github.com/Hyperizer69/vendor_realme_sdm710-common -b twelve vendor/realme/sdm710-common
+      - git clone --depth=1 https://github.com/xootkama/ev12_IllusionX_sdm710 -b ra kernel/realme/sdm710
+      - rm -rf hardware/qcom-caf/msm8996-R/display
+      - rm -rf hardware/qcom-caf/msm8998/display
+      - git clone --depth=1 https://github.com/Hyperizer69/hardware_qcom-caf_msm8998_display-1 -b twelve hardware/qcom-caf/msm8998/display
+      - git clone --depth=1 https://github.com/Hyperizer69/hardware_qcom-caf_msm8996_display -b twelve hardware/qcom-caf/msm8996/display
+      - git clone --depth=1 https://github.com/Hyperizer69/vendor_qcom_opensource_commonsys_display -b twelve vendor/qcom/opensource/commonsys/display
+      - git clone --depth=1 https://github.com/Hyperizer69/vendor_qcom_opensource_commonsys-intf_display -b twelve vendor/qcom/opensource/commonsys-intf/display
       # Anu
 #      - rm -rf vendor/aosp
 #      - git clone --depth=1 https://github.com/c3eru/vendor_aosp -b eleven-plus vendor/aosp
