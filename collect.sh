@@ -2,7 +2,7 @@
 cd /tmp/rom
 
 . build/envsetup.sh
-lunch aosp_juice-userdebug
+lunch fuse_RMX1851-userdebug
 curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="$(echo "${var_cache_report_config}")"
 export CCACHE_DIR=/tmp/ccache
 export CCACHE_EXEC=$(which ccache)
@@ -12,7 +12,7 @@ export SELINUX_IGNORE_NEVERALLOW=true
 ccache -M 20G
 ccache -o compression=true
 ccache -z
-mka bacon -j8 &
+make fuse-prod &
 sleep 90m
 kill %1
 ccache -s
