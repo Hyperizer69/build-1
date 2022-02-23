@@ -46,6 +46,7 @@ task:
       - echo "============================"
       - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Mulai sinkronisasi Sumber..."
       - cd /tmp/rom
+      - sudo -i
       - repo init -q --no-repo-verify --depth=1 -u https://github.com/Fusion-OS/android_manifest -b twelve -g default,-device,-mips,-darwin,-notdefault
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
       # DT/VT/KT/TC
@@ -56,6 +57,8 @@ task:
       - git clone --depth=1 https://github.com/xootkama/ev12_IllusionX_sdm710 -b ra kernel/realme/sdm710
       - rm -rf hardware/qcom-caf/msm8996-R/display
       - rm -rf hardware/qcom-caf/msm8998/display
+      - rm -rf vendor/qcom/opensource/commonsys/display
+      - rm -rf vendor/qcom/opensource/commonsys-intf/display
       - git clone --depth=1 https://github.com/Hyperizer69/hardware_qcom-caf_msm8998_display-1 -b twelve hardware/qcom-caf/msm8998/display
       - git clone --depth=1 https://github.com/Hyperizer69/hardware_qcom-caf_msm8996_display -b twelve hardware/qcom-caf/msm8996/display
       - git clone --depth=1 https://github.com/Hyperizer69/vendor_qcom_opensource_commonsys_display -b twelve vendor/qcom/opensource/commonsys/display
