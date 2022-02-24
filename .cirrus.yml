@@ -30,11 +30,11 @@ task:
        - sudo ln -sf /usr/bin/python3 /usr/bin/python
        - git config --global user.name "c3eru"
        - git config --global user.email "yyprjkt@gmail.com"
-       - mkdir -p /tmp/ccache
+       - mkdir -p /rom
        - rclone copy mobx:PixelExperience_Plus/ccache.tar.gz /tmp -P
-       - cd /tmp
+       - cd /rom
        - time tar xf ccache.tar.gz
-       - cd /tmp
+       - cd /rom
   
   Storage-Checker_background_script:
       - df -h
@@ -46,7 +46,8 @@ task:
       - echo "Menyinkronkan Sumber..."
       - echo "============================"
       - curl -s https://api.telegram.org/$TG_TOKEN/sendMessage -d chat_id=$TG_CHAT_ID -d text="Mulai sinkronisasi Sumber..."
-      - cd /tmp/rom
+      - mkdir rom
+      - cd rom
       - repo init -q --no-repo-verify --depth=1 -u https://github.com/Fusion-OS/android_manifest -b twelve -g default,-device,-mips,-darwin,-notdefault
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
       # DT/VT/KT/TC
