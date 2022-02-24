@@ -49,7 +49,7 @@ task:
       - mkdir rom
       - cd rom
       - repo init -q --no-repo-verify --depth=1 -u https://github.com/Fusion-OS/android_manifest -b twelve -g default,-device,-mips,-darwin,-notdefault
-      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
+      - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8 --fail-fast
       # DT/VT/KT/TC
       - git clone --depth=1 https://github.com/Hyperizer69/device_realme_RMX1971 -b twelve device/realme/RMX1851
       - git clone --depth=1 https://github.com/Hyperizer69/vendor_realme_RMX1851-1 --single-branch -b Lineage-8.1 vendor/realme/RMX1851
