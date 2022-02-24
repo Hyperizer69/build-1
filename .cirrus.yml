@@ -22,7 +22,7 @@ task:
        - export CROSS_COMPILE_ARM32=arm-linux-gnueabi-
        - apt update
        - apt install sudo
-       - sudo -i 
+       - RUN sudo -i 
        - mkdir -p ~/.config/rclone
        - echo "$rcloneconfig" > ~/.config/rclone/rclone.conf
        - DEBIAN_FRONTEND=noninteractive
