@@ -54,7 +54,7 @@ task:
       - git clone --depth=1 https://github.com/Hyperizer69/device_realme_RMX1971 -b twelve device/realme/RMX1851
       - git clone --depth=1 https://github.com/Hyperizer69/vendor_realme_RMX1851-1 --single-branch -b Lineage-8.1 vendor/realme/RMX1851
       - git clone --depth=1 https://github.com/Hyperizer69/device_realme_sdm710-common-1 -b twelve device/realme/sdm710-common
-      - git clone --depth=1 https://github.com/Hyperizer69/vendor_realme_sdm710-common -b twelve vendor/realme/sdm710-common
+      - git clone --depth=1 https://github.com/Hyperizer69/vendor_realme_sdm710-common-1 -b r11.0 vendor/realme/sdm710-common
       - git clone --depth=1 https://github.com/xootkama/ev12_IllusionX_sdm710 -b ra kernel/realme/sdm710
       - rm -rf hardware/qcom-caf/msm8996-R/display
       - rm -rf hardware/qcom-caf/msm8998/display
