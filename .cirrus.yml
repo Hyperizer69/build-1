@@ -23,7 +23,6 @@ task:
        - apt update
        - apt install sudo
        - sudo -i 
-       - sudo su
        - mkdir -p ~/.config/rclone
        - echo "$rcloneconfig" > ~/.config/rclone/rclone.conf
        - DEBIAN_FRONTEND=noninteractive
